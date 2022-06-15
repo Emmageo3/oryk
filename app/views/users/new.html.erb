@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="">
+        </div>
+        <div class="connexion">
+            <ul>
+                <li>Vous n avez pas de compte ?</li>
+                <li><a href="#">Connectez-vous</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <hr>
+
+    <section class="form">
+        <%= form_with model: @user, url: inscription_path do |form| %>
+            <h2>Bienvenue</h2>
+            <p>Accédez a votre plateforme d accompagnement</p>
+            <div class="form-group">
+                <label for="email">Adresse email:</label><br>
+                <%= form.text_field :email %>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe:</label><br>
+                <%= form.text_field :password %>
+            </div>
+            <div class="form-group">
+                <label for="password_confirm">Confirmer le mot de passe:</label><br>
+                <%= form.text_field :password_confirm %>
+            </div>
+
+            <div class="form-group">
+            <%= form.submit "Créer un compte", class: "submit"  %>
+            </div>
+        <% end %>
+    </section>
+    
+</body>
+</html>
