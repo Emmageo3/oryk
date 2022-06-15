@@ -14,8 +14,8 @@
         </div>
         <div class="connexion">
             <ul>
-                <li>Vous n avez pas de compte ?</li>
-                <li><a href="#">Connectez-vous</a></li>
+                <li>Vous avez déja un compte ?</li>
+                <li><a href="#">Inscrivez-vous</a></li>
             </ul>
         </div>
     </header>
@@ -23,24 +23,20 @@
     <hr>
 
     <section class="form">
-        <%= form_for @user do |f|%>
+        <%= form_tag '/login' do %>
             <h2>Bienvenue</h2>
             <p>Accédez a votre plateforme d accompagnement</p>
             <div class="form-group">
                 <label for="email">Adresse email:</label><br>
-                <%= f.text_field :email %>
+                <%= text_field_tag :email %>
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe:</label><br>
-                <%= f.password_field :password %>
-            </div>
-            <div class="form-group">
-                <label for="password_confirm">Confirmer le mot de passe:</label><br>
-                <%= f.password_field :password_confirm %>
+                <%= password_field_tag :password %>
             </div>
 
             <div class="form-group">
-            <%= f.submit "Créer un compte" %>
+            <%= submit_tag "Se connecter", class: "submit" %>
             </div>
         <% end %>
     </section>
